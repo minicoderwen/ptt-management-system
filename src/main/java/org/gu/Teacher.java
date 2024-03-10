@@ -28,7 +28,7 @@ public class Teacher extends Staff {
     public Teacher(int id, String name, String expertise) {
         super(id, name);
         this.setExpertise(expertise);
-        this.setAvailablility(true);
+        this.setAvailability(true);
         this.setAssignedTrainings(new String());
     }
 
@@ -48,7 +48,7 @@ public class Teacher extends Staff {
         this.assignedTrainings = assignedTrainings;
     }
 
-    private void setAvailablility(boolean isAvailable) {
+    private void setAvailability(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
 
@@ -60,7 +60,7 @@ public class Teacher extends Staff {
         return assignedTrainings;
     }
 
-    public boolean getAvailablility() {
+    public boolean getAvailability() {
         return isAvailable;
     }
 
@@ -74,6 +74,6 @@ public class Teacher extends Staff {
      */
     public void updateTrainingDetails(String trainings) {
         this.setAssignedTrainings(trainings);
-        this.setAvailablility(false);
+        this.setAvailability(false);
     }
 }
