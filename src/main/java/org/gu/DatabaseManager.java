@@ -154,4 +154,8 @@ public class DatabaseManager {
         // Make sure to use the updateTrainingDetails in Teacher -
         // to make sure availability is updated automatically
     }
+
+    public boolean requirementExists(int reqID) {
+        return false;
+    }
 }
