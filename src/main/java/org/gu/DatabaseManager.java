@@ -96,7 +96,7 @@ public class DatabaseManager {
      * 
      * 
      */
-    public Requirement getRequirement(int reqID) {
+    public static Requirement getRequirement(int reqID) {
         // TO DO
         return null;
     }

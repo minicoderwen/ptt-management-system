@@ -39,9 +39,18 @@ public class Teacher extends Staff {
         this.updateTrainingDetails(trainings);
     }
 
+    public void updateExpertise(String expertise) {
+        setExpertise(expertise);
+    }
+
     // Getters and Setters
     private void setExpertise(String expertise) {
-        this.expertise = expertise;
+        if (expertise != null && !expertise.trim().isEmpty()) {
+            this.expertise = expertise;
+        } else {
+            // Handle invalid expertise input appropriately
+            throw new IllegalArgumentException("Expertise cannot be null or empty.");
+        }
     }
 
     private void setAssignedTrainings(String assignedTrainings) {
