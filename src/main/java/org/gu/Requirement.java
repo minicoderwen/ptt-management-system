@@ -1,5 +1,8 @@
 package org.gu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 
  * Requirement.java
@@ -11,37 +14,44 @@ package org.gu;
  * 
  * 
  */
-
 public class Requirement {
     private int reqID;
     private Course courseDetail;
     private int requiredNumberOfPTTs;
     private String requiredTrainings;
-    private String assignedPTTs;
+    private List<String> assignedPTTs; // Assuming teacher names for simplicity
 
-    public Requirement(int reqID, Course courseDetail, int requiredNumberOfPTTs, String requiredTrainings,
-            String assignedPTTs) {
+    /**
+     * Constructs a Requirement object with initial values for its properties.
+     *
+     * @param reqID                The unique identifier for the requirement.
+     * @param courseDetail         The details of the course associated with this requirement.
+     * @param requiredNumberOfPTTs The number of part-time teachers required.
+     * @param requiredTrainings    The trainings required for the part-time teachers.
+     * @param assignedPTTs         The list of names of the assigned part-time teachers.
+     */
+    public Requirement(int reqID, Course courseDetail, int requiredNumberOfPTTs,
+                       String requiredTrainings, List<String> assignedPTTs) {
+        this.reqID = reqID;
+        this.courseDetail = courseDetail;
+        this.requiredNumberOfPTTs = validateRequiredNumberOfPTTs(requiredNumberOfPTTs);
+        this.requiredTrainings = requiredTrainings;
+        this.assignedPTTs = new ArrayList<>(assignedPTTs); // Allows for modification
+    }
 
-        // Requirements can be automated too
-        // But when I read from file I do not want this,
-        // I want to keep the reqID as it is in the file
-        // ReqID will not be necessarily in order, hence not having it automated
-        // Make sure to have validation in DB manager to check if the reqID is already
-        // present in which case do not allow the req to be added.
-
-        this.setRequirementID(reqID);
-        this.setCourseDetail(courseDetail);
-        this.setRequiredNumberOfPTTs(requiredNumberOfPTTs);
-        this.setRequiredTrainings(requiredTrainings);
-        this.setAssignedPTTs(assignedPTTs);
+    private int validateRequiredNumberOfPTTs(int requiredNumberOfPTTs) {
+        if (requiredNumberOfPTTs < 0) {
+            throw new IllegalArgumentException("Number of part-time teachers must be non-negative.");
+        }
+        return requiredNumberOfPTTs;
     }
 
     public int getRequirementID() {
         return reqID;
     }
 
-    public void setRequirementID(int id) {
-        this.reqID = id;
+    public void setRequirementID(int reqID) {
+        this.reqID = reqID;
     }
 
     public Course getCourseDetail() {
@@ -57,7 +67,7 @@ public class Requirement {
     }
 
     public void setRequiredNumberOfPTTs(int requiredNumberOfPTTs) {
-        this.requiredNumberOfPTTs = requiredNumberOfPTTs;
+        this.requiredNumberOfPTTs = validateRequiredNumberOfPTTs(requiredNumberOfPTTs);
     }
 
     public String getRequiredTrainings() {
@@ -68,12 +78,28 @@ public class Requirement {
         this.requiredTrainings = requiredTrainings;
     }
 
-    public String getAssignedPTTs() {
+    public List<String> getAssignedPTTs() {
         return assignedPTTs;
     }
 
-    public void setAssignedPTTs(String assignedPTTs) {
-        this.assignedPTTs = assignedPTTs;
+    public void setAssignedPTTs(List<String> assignedPTTs) {
+        this.assignedPTTs = new ArrayList<>(assignedPTTs);
     }
 
+    /**
+     * This method was modified to accept a List<String> instead of a single String to better
+     * represent multiple part-time teachers. If you need to maintain the original String-based
+     * approach for compatibility, you'll need to adapt the handling of assignedPTTs accordingly.
+     */
+
+    @Override
+    public String toString() {
+        return "Requirement{" +
+                "reqID=" + reqID +
+                ", courseDetail=" + courseDetail +
+                ", requiredNumberOfPTTs=" + requiredNumberOfPTTs +
+                ", requiredTrainings='" + requiredTrainings + '\'' +
+                ", assignedPTTs=" + assignedPTTs +
+                '}';
+    }
 }
