@@ -4,7 +4,7 @@ package org.gu;
  * 
  * Course.java
  * 
- * This class represents a course offerred in the university characteristied by
+ * This class represents a course offered in the university characterized by
  * courseID, courseName and expertise required for the course.
  * 
  */
@@ -26,12 +26,18 @@ public class Course {
         this.setRequiredExpertise(requiredExpertise);
     }
 
+    public Course(String courseID, String courseName) {
+        this.setCourseID(courseID);
+        this.setCourseName(courseName);
+        this.setRequiredExpertise("");
+    }
+
     // Getters and Setters
     public String getCourseID() {
         return courseID;
     }
 
-    private void setCourseID(String courseID) {
+    public void setCourseID(String courseID) {
         this.courseID = courseID;
     }
 
@@ -39,7 +45,7 @@ public class Course {
         return courseName;
     }
 
-    private void setCourseName(String courseName) {
+    public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 
@@ -47,8 +53,15 @@ public class Course {
         return requiredExpertise;
     }
 
-    private void setRequiredExpertise(String requiredExpertise) {
+    public void setRequiredExpertise(String requiredExpertise) {
         this.requiredExpertise = requiredExpertise;
+    }
+    
+    /**
+     * @return String
+     */
+    public String toString() {
+    	return String.format("%-5s %-35s %s", courseID, courseName, requiredExpertise);
     }
 
 }

@@ -5,8 +5,8 @@ package org.gu;
  * Requirement.java
  * 
  * Requirement class represents the part-time teaching requirement
- * added by the class-director and it is characterised by a requirement ID,
- * course details, Number of Part-time teachers required, Required trainings
+ * added by the class-director and it is characterized by a requirement ID,
+ * course details, Number of Part-time teachers required, Required training,
  * and assigned Part-time teachers for this request.
  * 
  * 
@@ -21,13 +21,6 @@ public class Requirement {
 
     public Requirement(int reqID, Course courseDetail, int requiredNumberOfPTTs, String requiredTrainings,
             String assignedPTTs) {
-
-        // Requirements can be automated too
-        // But when I read from file I do not want this,
-        // I want to keep the reqID as it is in the file
-        // ReqID will not be necessarily in order, hence not having it automated
-        // Make sure to have validation in DB manager to check if the reqID is already
-        // present in which case do not allow the req to be added.
 
         this.setRequirementID(reqID);
         this.setCourseDetail(courseDetail);
@@ -74,6 +67,15 @@ public class Requirement {
 
     public void setAssignedPTTs(String assignedPTTs) {
         this.assignedPTTs = assignedPTTs;
+    }
+
+    /**
+     * @return String
+     */
+    public String toString() {
+    	return String.format("%-10s %-10s %-40s %-15s %-30s %s", reqID, 
+    			courseDetail.getCourseID(), courseDetail.getCourseName(), 
+    			requiredNumberOfPTTs, requiredTrainings, assignedPTTs);
     }
 
 }

@@ -28,7 +28,7 @@ public class Teacher extends Staff {
     public Teacher(int id, String name, String expertise) {
         super(id, name);
         this.setExpertise(expertise);
-        this.setAvailablility(true);
+        this.setAvailability(true);
         this.setAssignedTrainings(new String());
     }
 
@@ -38,17 +38,25 @@ public class Teacher extends Staff {
         this.setExpertise(expertise);
         this.updateTrainingDetails(trainings);
     }
+    
+    public Teacher(int id, String name, String expertise, boolean availability, String trainings) {
+        super(id, name);
+        this.setExpertise(expertise);
+        this.setAvailability(availability);
+        this.setAssignedTrainings(trainings);
+        
+    }
 
     // Getters and Setters
-    private void setExpertise(String expertise) {
+    public void setExpertise(String expertise) {
         this.expertise = expertise;
     }
 
-    private void setAssignedTrainings(String assignedTrainings) {
+    public void setAssignedTrainings(String assignedTrainings) {
         this.assignedTrainings = assignedTrainings;
     }
 
-    private void setAvailablility(boolean isAvailable) {
+    private void setAvailability(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
 
@@ -60,7 +68,7 @@ public class Teacher extends Staff {
         return assignedTrainings;
     }
 
-    public boolean getAvailablility() {
+    public boolean getAvailability() {
         return isAvailable;
     }
 
@@ -74,6 +82,24 @@ public class Teacher extends Staff {
      */
     public void updateTrainingDetails(String trainings) {
         this.setAssignedTrainings(trainings);
-        this.setAvailablility(false);
+        this.setAvailability(false);
+    }
+    
+    /**
+     * 
+     * @param trainings
+     * @param availability
+     */
+    public void updateTrainingDetails(String trainings, boolean availability) {
+        this.setAssignedTrainings(trainings);
+        this.setAvailability(availability);
+    }
+    
+    /**
+     *  @return 
+     */
+    public String toString() {
+    	String availability = isAvailable? "Yes": "No";
+    	return String.format("%-5s %-15s %-30s %-15s %s", this.getStaffID(), this.getStaffName(), expertise, availability, assignedTrainings);
     }
 }

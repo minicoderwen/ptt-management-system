@@ -1,0 +1,16 @@
+STAFF_ID,STAFF_NAME,EXPERTISE,AVAILABILITY,TRAININGS
+101,Emma,Computer Networks,1,Network Security Cloud Computing
+102,Liam,Software Engineering,0,Agile Development Software Architecture
+103,Olivia,Database Management,1,SQL NoSQL Databases
+104,Noah,Artificial Intelligence,1,Machine Learning Deep Learning
+105,Ava,Web Development,0,HTML CSS JavaScript
+106,William,Mobile App Development,1,Android iOS Development
+107,Sophia,Computer Graphics,1,OpenGL DirectX
+108,James,Information Systems,0,Business Intelligence Data Warehousing
+109,Isabella,Human-Computer Interaction,1,User Experience Design Usability Testing
+110,Ethan,Cybersecurity,1,Ethical Hacking Penetration Testing
+111,Mia,Computer Vision,0,Image Processing Pattern Recognition
+112,Alexander,Data Science,1,Data Analysis Big Data Analytics
+113,Charlotte,Software Testing,1,Test Automation Quality Assurance
+114,Benjamin,Embedded Systems,0,Firmware Development Microcontrollers
+115,Amelia,Cloud Computing,1,AWS Azure Google Cloud

@@ -1,10 +1,12 @@
 package org.contract;
 
+import java.util.Scanner;
+
 /**
  * 
  * Add interface
  * 
  */
 public interface Add {
-    void addRequirements(String req);
+    void addRequirements(Scanner scanner);
 }

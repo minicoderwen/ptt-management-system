@@ -1,0 +1,16 @@
+REQID,COURSE_ID,COURSE_NAME,REQUIRED_TRAININGS,Number_of_PTTs,Assigned_PTTs
+1,101,Computer Science 101,Algorithms Data_Structures 101,2,42 10
+2,102,Introduction to Programming,Coding_Principles 101,1,24
+3,103,Data Structures and Algorithms,Algorithms 101 Data_Structures 101,2,10 18
+4,104,Software Engineering,Software_Design 101,1,32
+5,105,Operating Systems,OS_Fundamentals 101,1,15
+6,106,Database Management Systems,DB_Fundamentals 101,1,28
+7,107,Computer Networks,Networking_Basics 101,1,20
+8,108,Web Development,HTML_CSS JS_Basics,2,22 30
+9,109,Mobile App Development,Mobile_Dev_Basics,1,12
+10,110,Machine Learning,ML_Fundamentals,1,25
+11,111,Computer Security,Security_Basics,1,18
+12,112,Artificial Intelligence,AI_Fundamentals,1,21
+13,113,Cloud Computing,Cloud_Fundamentals,1,17
+14,114,Human-Computer Interaction,UI_UX_Design,1,14
+15,115,Parallel and Distributed Computing,Parallel_Computing_Design,1,10

@@ -39,4 +39,23 @@ public abstract class Staff {
     public int getStaffID() {
         return staffID;
     }
+    
+    /**
+     * setStaffName()
+     * 
+     * @return staffName (String)
+     */
+    public void setStaffName(String name) {
+        this.staffName = name;
+    }
+
+    /**
+     * 
+     * setStafffID()
+     * 
+     * @return staffID (int)
+     */
+    public void setStaffID(int staffID) {
+        this.staffID = staffID;
+    }
 }

@@ -6,12 +6,9 @@ package org.contract;
  * 
  */
 public interface View {
-
     void viewRequirements();
-
-    void viewRequirement(int reqID);
-
     void viewPartTimeTeachersData();
-
-    void viewPartTimeTeacherData(int staffID);
+    void viewOfferredCourses();
+    void viewRequirement(int reqID);
+    void viewPartTimeTeacherData(int staffID);  
 }
