@@ -214,7 +214,7 @@ public class PartTimeSystem {
 
     private void viewMenu(Staff viewer) {
         System.out.println("\nAvailable Actions:");
-        System.out.println("\n(1) VIEW REQUIREMENTS\n(2)VIEW TEACHERS\n(3)VIEW COURSES(4)BACK TO MAIN MENU\n(5)EXIT");
+        System.out.println("\n(1) VIEW REQUIREMENTS\n(2) VIEW TEACHERS\n(3) VIEW COURSES\n(4) BACK TO MAIN MENU\n(5) EXIT");
         System.out.println("Enter your choice:");
         verifyChoice("That's not a valid choice. Please enter a number between 1 and 4:");
         int action = scanner.nextInt();
